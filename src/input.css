@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sahel : "sahel";
+    --font-sahel-semibold : "sahel semiBold";
+    --font-sahel-bold : "sahel bold";
+}
+
+@layer base {
+    @font-face {
+        font-family: "sahel";
+        src: url('../assets/fonts/sahel/Sahel-FD.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: "sahel semiBold";
+        src: url('../assets/fonts/sahel/Sahel-SemiBold-FD.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: "sahel bold";
+        src: url('../assets/fonts/sahel/Sahel-Bold-FD.woff2') format('woff2');
+    }
+}
