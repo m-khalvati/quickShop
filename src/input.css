@@ -6,12 +6,20 @@
     --font-sahel-bold : "sahel bold";
 }
 
+@custom-variant child "& > *";
+@custom-variant child-hover "& > *:hover";
+
+
 @layer utilities {
     .my_container {
         @apply w-9/10 mx-auto
     }
 
     .bg_gradient_orange:hover {
+        @apply bg-gradient-to-r from-[#FF8904] to-[#FF6900]
+    }
+
+    .bg_gradient_orange_main {
         @apply bg-gradient-to-r from-[#FF8904] to-[#FF6900]
     }
 
