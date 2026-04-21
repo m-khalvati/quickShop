@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="fa-IR" dir="rtl">
+<html lang="fa-IR" dir="rtl" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Shop</title>
     <link rel="stylesheet" href="../src/output.css">
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+            (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+        );
+    </script>
 </head>
-<body class="font-sahel">
+<body class="font-sahel dark:bg-black">
 
     <svg class="hidden">
         <symbol id="home" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,10 +135,15 @@
                     stroke-linecap="round" stroke-linejoin="round" />
             </g>
         </symbol>
+        <symbol id="moon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M2.36811 14.49C2.78811 20.4983 7.88645 25.3867 13.9881 25.655C18.2931 25.8417 22.1431 23.835 24.4531 20.6733C25.4098 19.3783 24.8964 18.515 23.2981 18.8067C22.5164 18.9467 21.7114 19.005 20.8714 18.97C15.1664 18.7367 10.4998 13.965 10.4764 8.33002C10.4648 6.81335 10.7798 5.37835 11.3514 4.07168C11.9814 2.62502 11.2231 1.93668 9.76478 2.55502C5.14478 4.50335 1.98311 9.15835 2.36811 14.49Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
     </svg>
 
     <!-- start menu -->
-    <section class="h-31.5 bg-gradient-to-b from-black to-transparent flex items-end absolute w-full">
+    <section class="h-31.5 bg-linear-to-b from-black to-transparent flex items-end absolute w-full">
         <div class="my_container flex justify-between relative border-b border-neutral-500 items-end py-7.5">
             <nav>
                 <ul class="flex gap-x-5">
@@ -149,10 +162,11 @@
                             </svg>
                             <span>فروشگاه</span>
                         </a>
+                        <!-- start sub menu  -->
                         <div class="absolute top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible  transition-all delay-200">
-                            <ul class="bg-white w-67 py-2.5 px-4 rounded-2xl translate-y-10 child:text-lg child:py-1.25 divide-y divide-neutral-50">
+                            <ul class="bg-white dark:bg-neutral-800 dark:text-white w-67 py-2.5 px-4 rounded-2xl translate-y-10 child:text-lg child:py-1.25 divide-y divide-neutral-50">
                                 <li>
-                                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 hover:text-orange-500 px-1.25">
+                                    <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
                                         <svg class="size-5.5 flex">
                                             <use href="#element-equal"></use>
                                         </svg>
@@ -160,7 +174,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 hover:text-orange-500 px-1.25">
+                                    <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
                                         <svg class="size-5.5 flex">
                                             <use href="#element-equal"></use>
                                         </svg>
@@ -168,7 +182,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 hover:text-orange-500 px-1.25">
+                                    <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
                                         <svg class="size-5.5 flex">
                                             <use href="#element-equal"></use>
                                         </svg>
@@ -176,7 +190,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 hover:text-orange-500 px-1.25">
+                                    <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
                                         <svg class="size-5.5 flex">
                                             <use href="#element-equal"></use>
                                         </svg>
@@ -185,6 +199,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- end sub menu  -->
                     </li>
                     <li>
                         <a href="" class="text-xl text-white hover:text-orange-500 flex items-center relative">
@@ -208,36 +223,39 @@
                 <img src="imgs/Group 1.svg" alt="">
             </div>
             <div class="flex gap-x-2.5">
-                <button class="border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
-                    <svg class="size-7">
-                        <use href="#sun"></use>
+                <button id="toggle-theme-btn" class="border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
+                    <svg class="size-7 dark:hidden">
+                        <use href="#sun" ></use>
+                    </svg>
+                    <svg class="size-7 hidden dark:inline-block">
+                        <use href="#moon" ></use>
                     </svg>
                 </button>
-                <div class="group relative border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
+                <div class="group relative border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500">
                     <svg class="size-7">
                         <use href="#shopping-cart"></use>
                     </svg>
                     <span class="size-5 flex items-center justify-center rounded-full bg-orange-500 text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
                     <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all delay-200">
-                        <div class="w-83 bg-white rounded-2xl p-4 mt-10">
+                        <div class="w-83 bg-white dark:bg-neutral-800 rounded-2xl p-4 mt-10">
                             <!-- start items cart -->
                             <div class="child:pb-2 child:mb-2 child:border-b child:border-neutral-50 max-h-70 overflow-y-auto">
                                 <div class="flex items-center">
                                     <div>
-                                        <svg class="text-neutral-500 size-5.5">
+                                        <svg class="text-neutral-500 dark:text-white size-5.5">
                                             <use href="#close"></use>
                                         </svg>
                                     </div>
                                     <div class="w-25 shrink-0">
                                         <img src="./imgs/p1.png" alt="product 1">
                                     </div>
-                                    <div class="text-black text-right grow-1">
+                                    <div class="text-black dark:text-white text-right grow">
                                         <h6 class="line-clamp-1">کفش اسپورت اسپارتان</h6>
-                                        <div class="text-neutral-500">
+                                        <div class="text-neutral-500 dark:text-white">
                                             <span>1</span>
                                             <span>عدد</span>
                                         </div>
-                                        <div class="text-left text-neutral-500">
+                                        <div class="text-left text-neutral-500 dark:text-white">
                                             <span class="font-sahel-semibold">415,000</span>
                                             <span>تومان</span>
                                         </div>
@@ -245,20 +263,20 @@
                                 </div>
                                 <div class="flex items-center">
                                     <div>
-                                        <svg class="text-neutral-500 size-5.5">
+                                        <svg class="text-neutral-500 dark:text-white size-5.5">
                                             <use href="#close"></use>
                                         </svg>
                                     </div>
                                     <div class="w-25 shrink-0">
                                         <img src="./imgs/p2.png" alt="product 2">
                                     </div>
-                                    <div class="text-black text-right grow-1">
+                                    <div class="text-black dark:text-white text-right grow">
                                         <h6 class="line-clamp-1">کیف کلاسیک مهرخ کیف کلاسیک مهرخ کیف کلاسیک مهرخ</h6>
-                                        <div class="text-neutral-500">
+                                        <div class="text-neutral-500 dark:text-white">
                                             <span>1</span>
                                             <span>عدد</span>
                                         </div>
-                                        <div class="text-left text-neutral-500">
+                                        <div class="text-left text-neutral-500 dark:text-white">
                                             <span class="font-sahel-semibold">715,000</span>
                                             <span>تومان</span>
                                         </div>
@@ -269,7 +287,7 @@
                             
                             <!-- start detail shopping cart  -->
                             <div>
-                                <div class="text-black flex items-center justify-between">
+                                <div class="text-black dark:text-white flex items-center justify-between">
                                     <span>جمع کل</span>
                                     <div>
                                         <span class="font-sahel-semibold text-xl">1,215,000</span>
@@ -298,5 +316,7 @@
 
 
     <section class="bg-[url(../assets/imgs/image.png)] h-230 bg-center bg-cover"></section>
+
+    <script src="js/app.js"></script>
 </body>
 </html> 

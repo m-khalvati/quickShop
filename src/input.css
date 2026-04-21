@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-sahel : "sahel";
     --font-sahel-semibold : "sahel semiBold";
@@ -16,11 +18,11 @@
     }
 
     .bg_gradient_orange:hover {
-        @apply bg-gradient-to-r from-[#FF8904] to-[#FF6900]
+        @apply bg-linear-to-r from-[#FF8904] to-[#FF6900]
     }
 
     .bg_gradient_orange_main {
-        @apply bg-gradient-to-r from-[#FF8904] to-[#FF6900]
+        @apply bg-linear-to-r from-[#FF8904] to-[#FF6900]
     }
 
     nav a.active {
@@ -28,7 +30,7 @@
     }
 
     nav a.active::after {
-        @apply content-[''] w-full h-1 absolute -bottom-7.5 translate-y-0.5 rounded-full bg-gradient-to-r from-[#FF8904] to-[#FF6900]
+        @apply content-[''] w-full h-1 absolute -bottom-7.5 translate-y-0.5 rounded-full bg-linear-to-r from-[#FF8904] to-[#FF6900]
     }
 }
 
