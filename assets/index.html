@@ -14,7 +14,7 @@
         );
     </script>
 </head>
-<body class="font-sahel dark:bg-black">
+<body class="font-sahel dark:bg-neutral-800">
 
     <svg class="hidden">
         <symbol id="home" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,12 +140,20 @@
                 d="M2.36811 14.49C2.78811 20.4983 7.88645 25.3867 13.9881 25.655C18.2931 25.8417 22.1431 23.835 24.4531 20.6733C25.4098 19.3783 24.8964 18.515 23.2981 18.8067C22.5164 18.9467 21.7114 19.005 20.8714 18.97C15.1664 18.7367 10.4998 13.965 10.4764 8.33002C10.4648 6.81335 10.7798 5.37835 11.3514 4.07168C11.9814 2.62502 11.2231 1.93668 9.76478 2.55502C5.14478 4.50335 1.98311 9.15835 2.36811 14.49Z"
                 stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
         </symbol>
+        <symbol id="burger" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="-1" x2="22.0227" y2="-1" transform="matrix(1 0 -0.0293503 0.999569 0.988281 2.5)"
+                stroke="currentColor" stroke-width="2" />
+            <line y1="-1" x2="22.0227" y2="-1" transform="matrix(1 0 -0.0293503 0.999569 0.988281 8.5)"
+                stroke="currentColor" stroke-width="2" />
+            <line y1="-1" x2="22.0227" y2="-1" transform="matrix(1 0 -0.0293503 0.999569 0.988281 14.5)"
+                stroke="currentColor" stroke-width="2" />
+        </symbol>
     </svg>
 
     <!-- start menu -->
-    <section class="h-31.5 bg-linear-to-b from-black to-transparent flex items-end absolute w-full">
-        <div class="my_container flex justify-between relative border-b border-neutral-500 items-end py-7.5">
-            <nav>
+    <section class="h-16 sm:h-24 md:h-26 xl:h-31.5 z-50 bg-linear-to-b from-black to-transparent items-end absolute w-full">
+        <div class="my_container flex justify-between relative border-b border-neutral-500 items-center xl:items-end py-3.5 sm:py-4.5 md:py-5.5 xl:py-7.5">
+            <nav class="hidden xl:flex">
                 <ul class="flex gap-x-5">
                     <li>
                         <a href="" class="text-xl text-white hover:text-orange-500 flex items-center active relative">
@@ -219,23 +227,31 @@
                     </li>
                 </ul>
             </nav>
-            <div class="w-53.5 h-11 absolute left-0 right-0 mx-auto">
+
+            <div class="xl:hidden">
+                <svg class="text-white w-5.5 h-3 sm:w-8 sm:h-4.5 md:w-11 md:h-6">
+                    <use href="#burger"></use>
+                </svg>
+            </div>
+
+            <div class="w-30 h-6.5 sm:w-45 sm:h-10 md:w-50 md:h-13 xl:w-53.5 xl:h-11 absolute right-13.5 xl:left-0 xl:right-0 xl:mx-auto">
                 <img src="imgs/Group 1.svg" alt="">
             </div>
+
             <div class="flex gap-x-2.5">
-                <button id="toggle-theme-btn" class="border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
-                    <svg class="size-7 dark:hidden">
+                <button id="toggle-theme-btn" class="border border-neutral-500 flex justify-center items-center rounded-[10px] md:rounded-2xl size-7.5 sm:size-9 md:size-12 xl:p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
+                    <svg class="size-4.5 sm:size-5 md:size-6 xl:size-7 dark:hidden">
                         <use href="#sun" ></use>
                     </svg>
-                    <svg class="size-7 hidden dark:inline-block">
+                    <svg class="size-4.5 sm:size-5 md:size-6 xl:size-7 hidden dark:inline-block">
                         <use href="#moon" ></use>
                     </svg>
                 </button>
-                <div class="group relative border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500">
-                    <svg class="size-7">
+                <div class="group relative border border-neutral-500 flex justify-center items-center rounded-[10px] md:rounded-2xl size-7.5 sm:size-9 md:size-12 xl:p-2.5 text-white hover:text-orange-500 hover:border-orange-500">
+                    <svg class="size-4.5 sm:size-5 md:size-6 xl:size-7">
                         <use href="#shopping-cart"></use>
                     </svg>
-                    <span class="size-5 flex items-center justify-center rounded-full bg-orange-500 text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
+                    <span class="size-4 xl:size-5 flex items-center justify-center rounded-full bg-orange-500 text-white text-xs md:text-lg absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
                     <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all delay-200">
                         <div class="w-83 bg-white dark:bg-neutral-800 rounded-2xl p-4 mt-10">
                             <!-- start items cart -->
@@ -303,19 +319,46 @@
                         </div>
                     </div>
                 </div>
-                <button class="border border-orange-500 rounded-2xl p-2.5 flex text-orange-500 hover:text-white bg_gradient_orange cursor-pointer">
-                    <svg class="size-7">
+                <button class="border border-orange-500 flex justify-center items-center rounded-[10px] md:rounded-2xl size-7.5 sm:size-9 md:size-auto xl:p-2.5 text-orange-500 hover:text-white bg_gradient_orange cursor-pointer">
+                    <svg class="size-4.5 sm:size-5 md:size-6 xl:size-7">
                         <use href="#profile-tick"></use>
                     </svg>
-                    <span>ورود و ثبت نام</span>
+                    <span class="hidden md:inline-block">ورود و ثبت نام</span>
                 </button>
             </div>
         </div>
     </section>
     <!-- end menu -->
 
+    <!-- start header  -->
+    <header class="relative bg-[url(../assets/imgs/image.png)] h-230 bg-center bg-cover flex items-center">
+        <div class="my_container">
+            <div class="text-white mb-20">
+                <p class="text-5xl font-sahel-bold">تجربه راحت ترین خرید با کویک شاپ</p>
+                <p class="w-198.5 text-[26px] leading-12.5 mt-4 font-sahel-light">با هر سلیقه ای میتونی از کویک شاپ خرید کنی! تنوع بالای کیف و کفش مردانه و زنانه و ارسال رایگان خرید رو برات آسون تر می‌کنه!</p>
+            </div>
+        </div>
+        <svg class="w-full text-white dark:text-neutral-800 absolute bottom-0 translate-y-3 lg:translate-y-5"
+            viewBox="0 0 1920 194" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_241_2119" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-5" y="0" width="1928"
+                height="194">
+                <path
+                    d="M-0.434204 60.9999C-0.434204 60.9999 404.126 141.465 953.077 141.465C1502.03 141.465 1918.57 60.9999 1918.57 60.9999V194H-0.434204V60.9999Z"
+                    fill="currentColor" />
+                <path
+                    d="M-1.43665 0.897095C-1.43665 0.897095 401.883 92.4746 952.077 107.3C1502.27 122.126 1921.91 52.7234 1921.91 52.7234L1918.34 186.032L-4.99997 134.206L-1.43665 0.897095Z"
+                    fill="currentColor" fill-opacity="0.6" />
+                <path
+                    d="M-2.70947 29.1759C-2.70947 29.1759 402.011 115.744 952.757 123.745C1503.5 131.746 1922.57 57.1448 1922.57 57.1448L1920.64 190.487L-4.63103 162.518L-2.70947 29.1759Z"
+                    fill="currentColor" fill-opacity="0.6" />
+            </mask>
+            <g mask="url(#mask0_241_2119)">
+                <rect x="-0.434326" y="-3.00003" width="1920" height="179" fill="currentColor" />
+            </g>
+        </svg>
+    </header>
+    <!-- end header  -->
 
-    <section class="bg-[url(../assets/imgs/image.png)] h-230 bg-center bg-cover"></section>
 
     <script src="js/app.js"></script>
 </body>

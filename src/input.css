@@ -6,6 +6,8 @@
     --font-sahel : "sahel";
     --font-sahel-semibold : "sahel semiBold";
     --font-sahel-bold : "sahel bold";
+    --font-sahel-light : "sahel-light";
+
 }
 
 @custom-variant child "& > *";
@@ -35,6 +37,10 @@
 }
 
 @layer base {
+    @font-face {
+        font-family: "sahel light";
+        src: url('../assets/fonts/sahel/Sahel-Light-FD.woff2') format('woff2');
+    }
     @font-face {
         font-family: "sahel";
         src: url('../assets/fonts/sahel/Sahel-FD.woff2') format('woff2');
