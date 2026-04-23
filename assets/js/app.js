@@ -8,3 +8,13 @@ toggleThemeBtn.addEventListener('click' , function(){
         localStorage.theme = 'dark'
     }
 });
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 22,
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+    },
+});
