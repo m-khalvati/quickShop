@@ -30,3 +30,24 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
+
+// swiper readings 
+var readingsSwiper = new Swiper(".myreadingsSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 22,
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next-custom-readings",
+        prevEl: ".swiper-button-prev-custom-readings",
+    },
+    // breakpoints: {
+    //     1024: {
+    //         slidesPerView: 2,
+    //         spaceBetween: 16,
+    //     },
+    //     1536: {
+    //         slidesPerView: 3,
+    //         spaceBetween: 24,
+    //     },
+    // },
+});

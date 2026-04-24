@@ -197,6 +197,30 @@
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                 stroke-linejoin="round" />
         </symbol>
+        <symbol id="calendar" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.91406 2.31641V5.79166" stroke="currentColor" stroke-width="2.08515" stroke-miterlimit="10"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.1812 2.31641V5.79166" stroke="currentColor" stroke-width="2.08515" stroke-miterlimit="10"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M4.70117 10.5303H24.3943" stroke="currentColor" stroke-width="2.08515"
+                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+                d="M24.9734 9.84629V19.6929C24.9734 23.1681 23.2357 25.4849 19.1813 25.4849H9.91392C5.85945 25.4849 4.12183 23.1681 4.12183 19.6929V9.84629C4.12183 6.37104 5.85945 4.0542 9.91392 4.0542H19.1813C23.2357 4.0542 24.9734 6.37104 24.9734 9.84629Z"
+                stroke="currentColor" stroke-width="2.08515" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path opacity="0.4" d="M18.8275 15.8702H18.8379" stroke="currentColor" stroke-width="2.78021"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M18.8275 19.3458H18.8379" stroke="currentColor" stroke-width="2.78021"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M14.5423 15.8702H14.5527" stroke="currentColor" stroke-width="2.78021"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M14.5423 19.3458H14.5527" stroke="currentColor" stroke-width="2.78021"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M10.2547 15.8702H10.2651" stroke="currentColor" stroke-width="2.78021"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M10.2546 19.3452H10.265" stroke="currentColor" stroke-width="2.78021"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
     </svg>
 
     <!-- start menu -->
@@ -1127,6 +1151,66 @@
     </section>
     <!-- end banner -->
 
+    <!-- start readings -->
+    <section>
+        <div class="my_container">
+            <!-- section head  -->
+            <div class="section_head flex justify-between dark:text-white">
+                <div class="flex items-center gap-x-2 lg:gap-x-3.5 2xl:gap-x-5">
+                    <span class="w-4 h-1 lg:w-6 lg:h-1.5 2xl:w-9 2xl:h-1.75 bg_gradient_orange_main inline-block"></span>
+                    <span class="text-base lg:text-xl 2xl:text-[32px] font-sahel-semibold">خواندنی ها</span>
+                </div>
+                <div class="flex items-center gap-x-4 lg:gap-x-5 2xl:gap-x-7">
+                    <!-- left and right control -->
+                    <div class="flex gap-x-3 lg:gap-x-4 2xl:gap-x-5">
+                        <div class="swiper-button-prev-custom-readings">
+                            <svg class="bg-orange-500 cursor-pointer size-4.25 lg:text-6 2xl:size-8.25 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
+                                <use href="#right"></use>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next-custom-readings">
+                            <svg class="bg-orange-500 cursor-pointer size-4.25 lg:text-6 2xl:size-8.25 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
+                                <use href="#left"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <a href="" class="text-sm lg:text-base 2xl:text-2xl flex items-center gap-x-1">
+                        مشاهده همه
+                        <span>
+                            <svg class="bg-orange-500 size-4.25 lg:text-6 2xl:size-8.25 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
+                                <use href="#arrow-left"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- section body  -->
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-7 mt-6 mb-10 rounded-3xl">
+                <!-- offer slider -->
+                <div class="swiper myreadingsSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="bg-white dark:bg-neutral-800 p-5 rounded-3xl border border-transparent hover:border-orange-500 transition-colors duration-300">
+                                <div>
+                                    <img src="./imgs/a1.png" alt="" class="rounded-3xl">
+                                </div>
+                                <h3 class="text-[22px] font-sahel-semibold mt-6 dark:text-white">7 ترفند ساده تنگ کردن کفش گشاد در منزل </h3>
+                                <div class="mt-5 text-[20px] text-neutral-500 dark:text-neutral-50 flex items-center gap-x-1">
+                                    <svg class="size-5">
+                                        <use href="#calendar"></use>
+                                    </svg>
+                                    <span>12 اردیبهشت 1404</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end readings -->
+    
 
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/app.js"></script>
