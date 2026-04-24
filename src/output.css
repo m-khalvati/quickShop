@@ -248,11 +248,20 @@
   .right-\[20\%\] {
     right: 20%;
   }
+  .-bottom-0 {
+    bottom: calc(var(--spacing) * -0);
+  }
+  .-bottom-full {
+    bottom: -100%;
+  }
   .-bottom-px {
     bottom: -1px;
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-full {
+    bottom: 100%;
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -1495,6 +1504,11 @@
       width: calc(var(--spacing) * 76);
     }
   }
+  .lg\:w-160 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 160);
+    }
+  }
   .lg\:w-198\.5 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 198.5);
@@ -1741,6 +1755,24 @@
   .xl\:py-7\.5 {
     @media (width >= 80rem) {
       padding-block: calc(var(--spacing) * 7.5);
+    }
+  }
+  .xl\:group-hover\:visible {
+    @media (width >= 80rem) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .xl\:group-hover\:opacity-100 {
+    @media (width >= 80rem) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          opacity: 100%;
+        }
+      }
     }
   }
   .\32 xl\:my-6 {

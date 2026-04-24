@@ -84,7 +84,31 @@ closeMobileNav.addEventListener('click', function() {
 });
 
 blackLayer.addEventListener('click', function() {
+    // close menu
     mobileNav.classList.remove('right-0');
     mobileNav.classList.add('-right-79');
+    //close shopping card
+    mobileShoppingCard.classList.remove('bottom-0');
+    mobileShoppingCard.classList.add('-bottom-full');
+
+    blackLayer.classList.toggle('hidden');
+});
+
+
+let shoppingCardBtn = document.querySelector('.shopping_card_btn');
+let mobileShoppingCard = document.querySelector('.mobile_shopping_card');
+let closeShoppingCardBtn = document.querySelector('.close_shopping_card_btn')
+
+shoppingCardBtn.addEventListener('click', function() {
+    if(window.matchMedia('(max-width: 1279px)').matches){
+        mobileShoppingCard.classList.remove('-bottom-full');
+        mobileShoppingCard.classList.add('bottom-0');
+        blackLayer.classList.toggle('hidden');
+    }
+});
+
+closeShoppingCardBtn.addEventListener('click', function() {
+    mobileShoppingCard.classList.remove('bottom-0');
+    mobileShoppingCard.classList.add('-bottom-full');
     blackLayer.classList.toggle('hidden');
 });
