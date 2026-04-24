@@ -376,7 +376,7 @@
             </nav>
 
             <div class="xl:hidden">
-                <svg class="text-white w-5.5 h-3 sm:w-8 sm:h-4.5 md:w-11 md:h-6">
+                <svg class="text-white w-5.5 h-3 sm:w-8 sm:h-4.5 md:w-11 md:h-6 burger_btn">
                     <use href="#burger"></use>
                 </svg>
             </div>
@@ -478,20 +478,21 @@
     <!-- end menu -->
 
     <!-- start mobile nav -->
-    <div class="bg-white fixed min-h-screen top-0 bottom-0 right-0 w-79 z-50 p-5">
+    <div class="mobile_nav overflow-y-auto bg-white dark:bg-neutral-800 fixed min-h-screen top-0 bottom-0 -right-79 w-79 z-50 p-5 transition-all">
         <div class="flex justify-between items-center border-b border-neutral-50 pb-4">
-            <img src="./imgs/Group 13.png" alt="" class="w-38.5 h-8.5">
+            <img src="./imgs/Group 13.png" alt="" class="w-38.5 h-8.5 block dark:hidden">
+            <img src="./imgs/Group 13 _dark.png" alt="" class="w-38.5 h-8.5 hidden dark:block">
             <span>
-                <svg class="size-5 text-neutral-500">
+                <svg class="size-5 text-neutral-500 dark:text-neutral-50 close_mobile_nav">
                     <use href="#close-circle"></use>
                 </svg>
             </span>
         </div>
 
         <!-- mobile nav -->
-        <ul class="divide-y divide-neutral-50 flex flex-col items-start">
+        <ul class="divide-y divide-neutral-50 flex flex-col dark:text-white">
             <li class="py-4">
-                <a href="" class="flex items-center gap-x-1.5">
+                <a href="" class="inline-flex items-center gap-x-1.5">
                     <svg class="size-5">
                         <use href="#home"></use>
                     </svg>
@@ -506,13 +507,13 @@
                         </svg>
                         <span class="text-base">فروشگاه</span>
                     </a>
-                    <span>
+                    <span class="open_mobile_sub_menu_btn rotate-180">
                         <svg class="size-5">
                             <use href="#arrow-up"></use>
                         </svg>
                     </span>
                 </div>
-                <ul class="bg-white dark:bg-neutral-800 dark:text-white w-full py-2.5 px-4 rounded-2xl mt-3 child:text-lg child:py-1.25 divide-y divide-white">
+                <ul class="mobile_sub_menu hidden">
                     <li>
                         <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
                             <svg class="size-4">
@@ -548,7 +549,7 @@
                 </ul>
             </li>
             <li class="py-4">
-                <a href="" class="flex items-center gap-x-1.5">
+                <a href="" class="inline-flex items-center gap-x-1.5">
                     <svg class="size-5">
                         <use href="#people"></use>
                     </svg>
@@ -556,7 +557,7 @@
                 </a>
             </li>
             <li class="py-4">
-                <a href="" class="flex items-center gap-x-1.5">
+                <a href="" class="inline-flex items-center gap-x-1.5">
                     <svg class="size-5">
                         <use href="#call"></use>
                     </svg>
@@ -1534,7 +1535,7 @@
     <!-- end footer  -->
 
     <!-- start black-layer  -->
-    <div class="bg-neutral-700/70 fixed inset-0 z-40">
+    <div class="black_layer bg-neutral-700/70 fixed inset-0 z-40 hidden">
 
     </div>
     <!-- end black-layer  -->

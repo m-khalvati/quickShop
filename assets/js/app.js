@@ -55,3 +55,36 @@ var readingsSwiper = new Swiper(".myreadingsSwiper", {
         },
     },
 });
+
+//open and close mobile sub menu
+let openMobileSubMenuBtn = document.querySelector('.open_mobile_sub_menu_btn');
+let mobileSubMenu = document.querySelector('.mobile_sub_menu');
+
+openMobileSubMenuBtn.addEventListener('click', function() {
+    mobileSubMenu.classList.toggle('hidden'),
+    openMobileSubMenuBtn.classList.toggle('rotate-180')
+});
+
+// open and close mobile nav
+let burgerBtn = document.querySelector('.burger_btn');
+let mobileNav = document.querySelector('.mobile_nav');
+let blackLayer = document.querySelector('.black_layer');
+let closeMobileNav = document.querySelector('.close_mobile_nav');
+
+burgerBtn.addEventListener('click', function() {
+    mobileNav.classList.remove('-right-79');
+    mobileNav.classList.add('right-0');
+    blackLayer.classList.toggle('hidden');
+});
+
+closeMobileNav.addEventListener('click', function() {
+    mobileNav.classList.remove('right-0');
+    mobileNav.classList.add('-right-79');
+    blackLayer.classList.toggle('hidden');
+});
+
+blackLayer.addEventListener('click', function() {
+    mobileNav.classList.remove('right-0');
+    mobileNav.classList.add('-right-79');
+    blackLayer.classList.toggle('hidden');
+});

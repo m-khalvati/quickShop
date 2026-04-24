@@ -36,6 +36,12 @@
     }
 }
 
+@layer components {
+    .mobile_sub_menu {
+        @apply ms-5 bg-neutral-50 dark:bg-neutral-700 dark:text-white py-2.5 px-4 rounded-2xl mt-3 child:text-lg child:py-1.25 divide-y divide-white dark:divide-neutral-500;
+    }
+}
+
 @layer base {
     @font-face {
         font-family: "sahel light";
