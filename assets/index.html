@@ -279,10 +279,26 @@
             <path opacity="0.34" d="M20.3859 8.09163H20.3993" stroke="currentColor" stroke-width="2.77419"
                 stroke-linecap="round" stroke-linejoin="round" />
         </symbol>
+        <symbol id="close-circle" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10.0003 18.3333C14.5837 18.3333 18.3337 14.5833 18.3337 9.99999C18.3337 5.41666 14.5837 1.66666 10.0003 1.66666C5.41699 1.66666 1.66699 5.41666 1.66699 9.99999C1.66699 14.5833 5.41699 18.3333 10.0003 18.3333Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <g opacity="0.4">
+                <path d="M7.6416 12.3583L12.3583 7.6416" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M12.3583 12.3583L7.6416 7.6416" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </g>
+        </symbol>
+        <symbol id="arrow-up" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.6004 12.5417L11.1671 7.10833C10.5254 6.46666 9.47539 6.46666 8.83372 7.10833L3.40039 12.5417"
+                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
     </svg>
 
     <!-- start menu -->
-    <section class="h-16 sm:h-24 md:h-26 xl:h-31.5 z-50 bg-linear-to-b from-black to-transparent items-end absolute w-full">
+    <section class="h-16 sm:h-24 md:h-26 xl:h-31.5 z-40 bg-linear-to-b from-black to-transparent items-end fixed backdrop-blur-xs w-full">
         <div class="my_container flex justify-between relative border-b border-neutral-500 items-center xl:items-end py-3.5 sm:py-4.5 md:py-5.5 xl:py-7.5">
             <nav class="hidden xl:flex">
                 <ul class="flex gap-x-5">
@@ -460,6 +476,96 @@
         </div>
     </section>
     <!-- end menu -->
+
+    <!-- start mobile nav -->
+    <div class="bg-white fixed min-h-screen top-0 bottom-0 right-0 w-79 z-50 p-5">
+        <div class="flex justify-between items-center border-b border-neutral-50 pb-4">
+            <img src="./imgs/Group 13.png" alt="" class="w-38.5 h-8.5">
+            <span>
+                <svg class="size-5 text-neutral-500">
+                    <use href="#close-circle"></use>
+                </svg>
+            </span>
+        </div>
+
+        <!-- mobile nav -->
+        <ul class="divide-y divide-neutral-50 flex flex-col items-start">
+            <li class="py-4">
+                <a href="" class="flex items-center gap-x-1.5">
+                    <svg class="size-5">
+                        <use href="#home"></use>
+                    </svg>
+                    <span class="text-base">صفحه اصلی</span>
+                </a>
+            </li>
+            <li class="py-4 w-full">
+                <div class="flex justify-between">
+                    <a href="" class="flex items-center gap-x-1.5">
+                        <svg class="size-5">
+                            <use href="#building"></use>
+                        </svg>
+                        <span class="text-base">فروشگاه</span>
+                    </a>
+                    <span>
+                        <svg class="size-5">
+                            <use href="#arrow-up"></use>
+                        </svg>
+                    </span>
+                </div>
+                <ul class="bg-white dark:bg-neutral-800 dark:text-white w-full py-2.5 px-4 rounded-2xl mt-3 child:text-lg child:py-1.25 divide-y divide-white">
+                    <li>
+                        <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
+                            <svg class="size-4">
+                                <use href="#element-equal"></use>
+                            </svg>
+                            <span class="text-sm">کفش های زنانه</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
+                            <svg class="size-4">
+                                <use href="#element-equal"></use>
+                            </svg>
+                            <span class="text-sm">کفش های مردانه</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
+                            <svg class="size-4">
+                                <use href="#element-equal"></use>
+                            </svg>
+                            <span class="text-sm">کیف های زنانه</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="transition-color gap-x-1.5 flex items-center h-10.75 rounded-xl hover:bg-orange-50 dark:hover:bg-neutral-700 hover:text-orange-500 px-1.25">
+                            <svg class="size-4 ">
+                                <use href="#element-equal"></use>
+                            </svg>
+                            <span class="text-sm">کیف های مردانه</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="py-4">
+                <a href="" class="flex items-center gap-x-1.5">
+                    <svg class="size-5">
+                        <use href="#people"></use>
+                    </svg>
+                    <span class="text-base">درباره ما</span>
+                </a>
+            </li>
+            <li class="py-4">
+                <a href="" class="flex items-center gap-x-1.5">
+                    <svg class="size-5">
+                        <use href="#call"></use>
+                    </svg>
+                    <span class="text-base">تماس با ما</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end mobile nav -->
 
     <!-- start header  -->
     <header class="relative bg-[url(../assets/imgs/header-mobile3.jpg)] xl:bg-[url(../assets/imgs/image.png)] h-118 md:h-150 lg:h-230 bg-bottom xl:bg-center bg-cover flex items-center">
@@ -1164,11 +1270,11 @@
                     <div class="bg_gradient_orange_main rounded-3xl h-27 sm:h-40 lg:h-50 2xl:h-64.5 relative w-full px-7">
                         <img src="./imgs/pattern.png" alt="" class="absolute right-[20%]">
                         <img src="./imgs/svg-banner.png" alt="" class="absolute left-0 lg:left-0 -bottom-px h-10 sm:h-18 xl:h-24 2xl:h-auto">
-                        <img src="./imgs/man.png" alt="" class="z-40 absolute left-0 bottom-0 w-38 sm:w-57 lg:w-76 2xl:w-114 h-22.75 sm:h-34 lg:h-52 2xl:h-80">
+                        <img src="./imgs/man.png" alt="" class="z-10 absolute left-0 bottom-0 w-38 sm:w-57 lg:w-76 2xl:w-114 h-22.75 sm:h-34 lg:h-52 2xl:h-80">
 
-                        <div class="flex flex-col justify-center items-start h-full text-white z-50">
+                        <div class="flex flex-col justify-center items-start h-full text-white z-20">
                             <h4 class="text-base sm:text-lg lg:text-xl 2xl:text-3xl font-sahel-semibold">کیف و کفش  مردانه</h4>
-                            <p class="text-xs sm:text-sm lg:text-base 2xl:text-[22px] z-50 py-1 lg:py-3 w-[65%] lg:w-[55%]">
+                            <p class="text-xs sm:text-sm lg:text-base 2xl:text-[22px] z-20 py-1 lg:py-3 w-[65%] lg:w-[55%]">
                                 تنوع بالای کیف و کفش در طرح و رنگ و برند های داخلی و خارجی با ارسال رایگان!
                             </p>
                             <a href="" class="text-xs sm:text-sm lg:text-md 2xl:text-2xl flex items-center gap-x-1 mt-2 lg:mt-4 p-1.5 lg:p-3 transition-colors rounded-2xl border border-transparent hover:border-white">
@@ -1186,11 +1292,11 @@
                     <div class="bg_gradient_orange_main rounded-3xl h-27 sm:h-40 lg:h-50 2xl:h-64.5 relative w-full px-7">
                         <img src="./imgs/pattern.png" alt="" class="absolute right-[20%]">
                         <img src="./imgs/svg-banner.png" alt="" class="absolute left-0 lg:left-0 -bottom-px h-10 sm:h-18 xl:h-24 2xl:h-auto">
-                        <img src="./imgs/woman.png" alt="" class="z-40 absolute left-0 bottom-0 w-38 sm:w-57 lg:w-76 2xl:w-114 h-22.75 sm:h-34 lg:h-52 2xl:h-80">
+                        <img src="./imgs/woman.png" alt="" class="z-10 absolute left-0 bottom-0 w-38 sm:w-57 lg:w-76 2xl:w-114 h-22.75 sm:h-34 lg:h-52 2xl:h-80">
 
-                        <div class="flex flex-col justify-center items-start h-full text-white z-50">
+                        <div class="flex flex-col justify-center items-start h-full text-white z-20">
                             <h4 class="text-base sm:text-lg lg:text-xl 2xl:text-3xl font-sahel-semibold">کیف و کفش زنانه</h4>
-                            <p class="text-xs sm:text-sm lg:text-base 2xl:text-[22px] z-50 py-1 lg:py-3 w-[65%] lg:w-[55%]">
+                            <p class="text-xs sm:text-sm lg:text-base 2xl:text-[22px] z-20 py-1 lg:py-3 w-[65%] lg:w-[55%]">
                                 تنوع بالای کیف و کفش در طرح و رنگ و برند های داخلی و خارجی با ارسال رایگان!
                             </p>
                             <a href="" class="text-xs sm:text-sm lg:text-md 2xl:text-2xl flex items-center gap-x-1 mt-2 lg:mt-4 p-1.5 lg:p-3 transition-colors rounded-2xl border border-transparent hover:border-white">
@@ -1426,6 +1532,12 @@
         </div>
     </footer>
     <!-- end footer  -->
+
+    <!-- start black-layer  -->
+    <div class="bg-neutral-700/70 fixed inset-0 z-40">
+
+    </div>
+    <!-- end black-layer  -->
 
 
     <script src="js/swiper-bundle.min.js"></script>
